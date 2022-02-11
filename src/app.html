@@ -1,0 +1,76 @@
+<template>
+	<lightning-card>
+
+		<lightning-button variant="Brand" label="Dados" title="Mostrar Dados" onclick={mostrarDados}
+			class="slds-m-left_x-small">
+		</lightning-button>
+
+		<lightning-button variant="Brand" label="Redes Sociais" title="Mostrar Redes Sociais" onclick={mostrarRS}
+			class="slds-m-left_x-small">
+		</lightning-button>
+
+		<lightning-button variant="Brand" label="Calculadora" title="Calculadora" onclick={mostrarCalc}
+			class="slds-m-left_x-small">
+		</lightning-button>
+
+
+
+
+
+		<div class="div1 slds-m-around_medium" if:true={visibleDados}>
+			<h1 class="slds-text-heading_large">Trazer dados da Classe</h1>
+			<p>Horario: {horario}</p>
+			<p>Nome : {nome}</p>
+			<p>Telefone: {telefone}</p>
+			<p>CPF : {cpf}</p>
+			<p>Idade : {idade}</p>
+			<lightning-button variant="Brand" label="Trocar Valores" title="trocarValores" onclick={trocarValores}
+				class="slds-m-left_x-small">
+			</lightning-button>
+		</div>
+
+
+
+		<div class="div1 div2 slds-m-around_medium" if:true={visibleRS}>
+			<h1 class="slds-text-heading_large">Outros Dados</h1>
+
+			<p>Email: {email}</p>
+			<p>Instagram: <a href={instaLink} target="_blank"> {insta}</a> </p>
+			<p>LinkedIn:<a href={linkedin2} target="_blank"> {linkedin} </a></p>
+			<p>gif:<iframe src={gif} target="_blank"> gifzao </iframe> </p>
+
+
+		</div>
+
+
+		<div class="slds-m-around_medium" if:true={visibleCalculadora}>
+			<grid>
+
+				<lightning-input type="Integer" name="inputNumero" label="Digite Numero 1" onchange={handleNumberOneChange}
+					value={primeiroNumero}>
+				</lightning-input>
+				<lightning-input type="Integer" name="inputNumero" label="Digite Numero 2" onchange={handleNumberTwoChange}
+					value={segundoNumero}>
+				</lightning-input><br/>
+				<lightning-input type="Integer" name="inputNumero" label="Resultado" value={resultado}>
+				</lightning-input><br/>
+
+				<lightning-button variant="Brand" label="Somar" title="Somar" onclick={soma} class="slds-m-left_x-small">
+				</lightning-button>
+
+				<lightning-button variant="Brand" label="Subtrair" title="Subtrair" onclick={subtrair}
+					class="slds-m-left_x-small">
+				</lightning-button><br/><br/>
+
+				<lightning-button variant="Brand" label="Multiplicar" title="Multiplicar" onclick={multiplicar}
+					class="slds-m-left_x-small">
+				</lightning-button>
+
+				<lightning-button variant="Brand" label="Dividir" title="Dividir" onclick={divisao} class="slds-m-left_x-small">
+				</lightning-button>
+
+			</grid>
+		</div>
+
+	</lightning-card>
+</template>

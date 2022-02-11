@@ -1,0 +1,19 @@
+h1{
+    text-align: center;   
+}
+p{
+    padding: 10px;
+}
+.div1{
+    display: block;
+    border: 2px solid red;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+}
+a:hover{
+    color: limegreen;
+    background-color: royalblue;
+    font-size: 16px;
+    font-weight: bolder;
+}
